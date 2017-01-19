@@ -1,0 +1,20 @@
+submit hours
+* create database
+* * user table
+* * * username - varchar
+* * * password - varchar
+* * * id - primary key
+* * hours table
+* * * user_id - foreign key - user table
+* * * start time - either date format or epoch
+* * * end time - either date format or epoch
+* * * id - primary key
+* create views
+* * index
+* * individual
+* create model
+* * hours
+* * individual
+* create controllers
+* * hours
+* * individual
