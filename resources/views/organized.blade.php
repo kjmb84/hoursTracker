@@ -21,15 +21,23 @@
 
     <div>Name: {{ $user->name }} </div>
 
+    <?php
+        echo Form::button('Replace', ['onClick' => 'getTimes()']);
+    ?>
+
+    <div id="times">Hello</div>
+
     @foreach ($user->hours as $hour)
         <div style="width: 60%; margin: auto;">
             <div style="float: left">{{ $hour->startTime }}</div>
             <div style="float: right">{{ $hour->endTime }}</div>
         </div>
 
-        <div id="calendar"></div>
+        {{--<div id="calendar"></div>--}}
 
-        <br>
+
+
+
 
     @endforeach
 

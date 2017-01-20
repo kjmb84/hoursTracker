@@ -20,3 +20,5 @@ Route::get('/list', 'HoursController@showAll');
 Route::get('/list/{user}', 'HoursController@show');
 
 Route::get('/users', 'HoursController@listAllUsers');
+
+Route::post('/list/{user}/getTimes', 'AjaxController@getTimes');

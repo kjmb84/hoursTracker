@@ -22,18 +22,30 @@ $(document).ready(function() {
         },
 
         selectable: true,
-        selectHelper: true,
-        select:
+        selectHelper: true
 
 
     })
 
 });
 
-function getEvents(){
-    alert("hi");
+function getTimes(){
+    var url = window.location.pathname;
+    var pieces = url.split('/');
+    var id = pieces[pieces.length - 1];
+
     $.ajax({
         type: 'POST',
-        url: '/getTimes',
-    }
+        //url: '/' + id + '/getTimes',
+        url: url + '/getTimes',
+        success:function(data) {
+            $("#times").html(data);
+        }
+    });
 }
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
