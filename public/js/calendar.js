@@ -34,12 +34,17 @@ function getTimes(){
     var pieces = url.split('/');
     var id = pieces[pieces.length - 1];
 
+    // $.get(url + '/getTimes', function (data) {
+    //     $("#times").html(data);
+    // });
+
     $.ajax({
         type: 'POST',
         //url: '/' + id + '/getTimes',
         url: url + '/getTimes',
         success:function(data) {
-            $("#times").html(data);
+            var json = JSON.parse(data)
+            $("#times").html(json.id);
         }
     });
 }
