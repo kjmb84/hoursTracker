@@ -20,12 +20,11 @@ class AjaxController extends Controller
         //$times = hours::all();
         //return Response::json($hours->all());
         //return $hours->all();
-        if ($request->isMethod('post')) {
-            //return "a b c d e f g h i jklmao";
-            return hours::all();
-        }
-        return hours::all();
-        return "asdfasdfasdfasdfasdfasd";
+//        if ($request->isMethod('post')) {
+//            //return "a b c d e f g h i jklmao";
+//            return hours::where('user_id', $id)->get();
+//        }
+        return hours::where('user_id', $id)->get();
 
         //return Response::json(array('msg' => 'test');
 

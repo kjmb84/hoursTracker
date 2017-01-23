@@ -43,8 +43,10 @@ function getTimes(){
         //url: '/' + id + '/getTimes',
         url: url + '/getTimes',
         success:function(data) {
-            var json = JSON.parse(data)
-            $("#times").html(json.id);
+            for (var i = 0, len = data.length;i < len; i++) {
+                var attachment = "<div>ID: " + data[i].id + "\n Created At: " + data[i].created_at + "\n</div>";
+                $("#times").append(attachment);
+            }
         }
     });
 }
